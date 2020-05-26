@@ -13,3 +13,8 @@ h1 {
 	margin: 0 auto;
 	text-align: center;
 }
+
+body {
+	background-image: url(background132%20(1).jpg);
+	background-size: cover;
+}

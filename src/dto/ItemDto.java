@@ -37,6 +37,8 @@ public class ItemDto {
 	 * 値段
 	 */
 	int price;
+	
+	String userName;
 
 	public int getId() {
 		return id;
@@ -77,4 +79,13 @@ public class ItemDto {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+	
+	public String getUserName() {
+		return userName;
+	}
+	
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
 }

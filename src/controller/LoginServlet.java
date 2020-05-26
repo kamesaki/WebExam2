@@ -10,9 +10,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dbAccess.DBAccess;
 import dbAccess.SelectForLogin;
+import dto.ItemDto;
 
 /**
  * ログイン時に呼び出されるサーブレット<br>
@@ -22,7 +24,7 @@ import dbAccess.SelectForLogin;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static DBAccess dbAccess;
+	
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -39,22 +41,26 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		dbAccess = new SelectForLogin();
+		String button = request.getParameter("button");
 		
-		try {
-			dbAccess.execute(request);
-		} catch (SQLException e) {
-			e.printStackTrace();
+		if(button.equals("login")) {
+			if(request.getParameter("pass").equals("1234567890")) {
+				
+				HttpSession newSession = request.getSession(true);
+				
+				ItemDto Item = new ItemDto();
+				Item.setUserName(request.getParameter("userName"));
+			
+				newSession.setAttribute("item", Item);
+			}else {
+				request.setAttribute("message", "ログインに失敗しました");
+				doGet(request, response);
+				return;
+			}
 		}
-		
-		boolean flag = (boolean) request.getAttribute("flag");
-		
-		if(flag) {
-			response.sendRedirect("http://localhost:8080/webExam2/ManageServlet");
-		}else {
-			doGet(request, response);
-		}
-		
-		
+		response.setContentType("text/html; charset=UTF-8");
+		ServletContext context = getServletContext();
+		RequestDispatcher dis = context.getRequestDispatcher("/mypage.jsp");
+		dis.forward(request, response);
 	}
 }

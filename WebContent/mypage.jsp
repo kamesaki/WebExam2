@@ -12,6 +12,10 @@ p{
 </style>
 </head>
 <body>
-	<h2>マイページ</h2>
+	<h2>${item.userName}さんのマイページ</h2>
+	
+	<form action="ManageServlet" method="get">
+	<button name="btn" value="find">商品を探しに行こうぜ！</button>
+	</form>
 </body>
 </html>

@@ -38,6 +38,12 @@ public class ManageServlet extends HttpServlet {
 			case "delete":
 				next = "DeleteServlet";
 				break;
+			case "cart":
+				next = "Cart.jsp";
+				break;
+			case "find":
+				next = "manage.jsp";
+				break;
 			default:
 				next = "manage.jsp";
 				break;

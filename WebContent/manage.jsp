@@ -8,14 +8,12 @@
 <title>manage</title>
 </head>
 <body>
-<h2>商品管理ページ</h2>
+<h2>商品検索ページ</h2>
 	<c:if test="${message != null }">
 		<p>${message}</p>
 	</c:if>
 	
-	<form action="ManageServlet" method="get">
-		<button name="btn" value="insert">新規商品登録</button>
-	</form>
+	
 	
 	<form action="ManageServlet" method="get">
 		<button name="btn" value="search">全商品一覧表示</button>
@@ -67,13 +65,7 @@
 					<td>${item.id}</td><td>${item.code}</td><td>${item.name}</td><td>${item.category}</td><td>${item.price}</td>
 					<td>
 						<form action="ManageServlet" method="get">
-							<button name="btn" value="edit">変更</button>
-							<input type="hidden" name="code" value="${item.code}">
-						</form>
-					</td>
-					<td>
-						<form action="ManageServlet" method="get">
-							<button name="btn" value="delete">削除</button>
+							<button name="btn" value="edit">カートに入れる</button>
 							<input type="hidden" name="code" value="${item.code}">
 						</form>
 					</td>

@@ -9,13 +9,13 @@
 </head>
 <body>
 	<h2>あなたのカートの中身です</h2>
-	<form action="EditServlet" method="post">
+	<form action="CartServlet" method="post">
 		<table border="1">
 			<tr>
 				<th>商品名</th><td><input type="text" name="name" value="${item.name}"></td>
 			</tr>
 			<tr>
-				<th>カテゴリ</th><td><input type="text" name="category" value="${item.category}"></td>
+				<th>カテゴリ</th><td>${item.category}</td>
 			</tr>
 			<tr>
 				<th>価格</th><td><input type="text" name="price" value="${item.price}"></td>

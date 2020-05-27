@@ -65,7 +65,7 @@
 					<td>${item.id}</td><td>${item.code}</td><td>${item.name}</td><td>${item.category}</td><td>${item.price}</td>
 					<td>
 						<form action="ManageServlet" method="get">
-							<button name="btn" value="edit">カートに入れる</button>
+							<button name="btn" value="cart">カートに入れる</button>
 							<input type="hidden" name="code" value="${item.code}">
 						</form>
 					</td>

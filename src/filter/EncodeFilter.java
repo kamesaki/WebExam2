@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package filter;
 
 import java.io.IOException;
@@ -49,3 +50,4 @@ public class EncodeFilter implements Filter {
 	}
 
 }
+>>>>>>> fujiko

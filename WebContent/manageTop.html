@@ -2,16 +2,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Manage Ligin</title>
+<title>login</title>
+<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
-	<h2>ログインページ</h2>
-	<form action="LoginServlet" method="post">
-		<p>USER NAME</p>
-		<input type="text" name="userName">
-		<p>PASSWORD</p>
-		<input type="password" name="pass">
-		<input class="submit" type="submit" name="button" value="login">
-	</form>
+	<h1>青木商店</h1>
+	<div class = "top">
+		<form action="LoginServlet" method="post">
+			<p>USER NAME</p>
+			<input type="text" name="userName" size=35>
+			<p>PASSWORD</p>
+			<input type="password" name="pass" size=35>
+			<br>
+			<button name="button" value="login">ログインしちゃおうぜ！</button>
+		</form>
+	</div>
 </body>
 </html>

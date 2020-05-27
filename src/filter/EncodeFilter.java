@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 91ded5716f69e2fc4242d1f53b7fcd6cecb852e1
 package filter;
 
 import java.io.IOException;
@@ -50,4 +53,7 @@ public class EncodeFilter implements Filter {
 	}
 
 }
+<<<<<<< HEAD
 >>>>>>> fujiko
+=======
+>>>>>>> 91ded5716f69e2fc4242d1f53b7fcd6cecb852e1

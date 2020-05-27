@@ -30,6 +30,7 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		
 		ServletContext context = getServletContext();
 		RequestDispatcher dis = context.getRequestDispatcher("/manageTop.html");
@@ -40,24 +41,25 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		
 		String button = request.getParameter("button");
-		
-		if(button.equals("login")) {
-			if(request.getParameter("pass").equals("1234567890")) {
-				
-				HttpSession newSession = request.getSession(true);
-				
-				ItemDto Item = new ItemDto();
-				Item.setUserName(request.getParameter("userName"));
 			
-				newSession.setAttribute("item", Item);
-			}else {
-				request.setAttribute("message", "ログインに失敗しました");
-				doGet(request, response);
-				return;
+			if(button.equals("login")) {
+				if(request.getParameter("pass").equals("1234567890")) {
+					
+					HttpSession newSession = request.getSession(true);
+					
+					ItemDto Item = new ItemDto();
+					Item.setUserName(request.getParameter("userName"));
+				
+					newSession.setAttribute("item", Item);
+				}else {
+					request.setAttribute("message", "ログインに失敗しました");
+					doGet(request, response);
+					return;
+				}
 			}
-		}
 		response.setContentType("text/html; charset=UTF-8");
 		ServletContext context = getServletContext();
 		RequestDispatcher dis = context.getRequestDispatcher("/mypage.jsp");

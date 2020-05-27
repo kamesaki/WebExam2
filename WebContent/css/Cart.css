@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+body {
+	background-image: url(sora2.jpg);
+	background-size: cover;
+	padding-top: 300px;
+}
+
+
+
+.cage {
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 30px;
+}
+
+.cage table {
+	width: 300px;
+	margin: 0 auto;
+	background-color: white;
+	margin-top: 70px;
+	margin-bottom: 30px;
+}
+
+.push {
+	padding: 10px;
+	text-size: 30px;
+}

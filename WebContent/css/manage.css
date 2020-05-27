@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+body {
+	background-image: url("pngtree-grassland-small-fresh-background-print-background-image_149288.jpg");
+	background-size: cover;
+	text-align: center;
+	color: brown;
+	font-family: Gulim;
+	padding-top: 20px;
+}
+
+table {
+	margin: 0 auto;
+	margin-top: 100px;
+	background-color: white;
+}
+
+.btnchan {
+	padding: 20px;
+	font-size: 20px;
+	border-radius: 20px;
+	background-color: pink;
+}
+
+.btnchans {
+	padding: 10px;
+	font-size: 20px;
+	border-radius: 20px;
+	background-color: pink;
+}
+
+.btnbtn {
+	padding: 5px;
+	font-size: 12px;
+	border-radius: 5px;
+	
+}

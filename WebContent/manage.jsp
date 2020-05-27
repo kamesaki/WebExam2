@@ -6,9 +6,10 @@
 <head>
 <meta charset="utf-8">
 <title>manage</title>
+<link rel="stylesheet" href="css/manage.css">
 </head>
 <body>
-<h2>商品検索ページ</h2>
+<h2>商品検索しちゃおうぜ！</h2>
 	<c:if test="${message != null }">
 		<p>${message}</p>
 	</c:if>
@@ -16,14 +17,15 @@
 	
 	
 	<form action="ManageServlet" method="get">
-		<button name="btn" value="search">全商品一覧表示</button>
+		<button class = "btnchan" name="btn" value="search">全商品一覧表示</button>
 		<input type="hidden" name="selectWay" value="all">
 	</form>
+	
 	
 	<form action="ManageServlet" method="get">
 		<p>商品名で検索</p>
 		<input type="text" name="name">
-		<button name="btn" value="search">検索</button>
+		<button class = "btnbtn" name="btn" value="search">検索</button>
 		<input type="hidden" name="selectWay" value="name">
 	</form>
 	
@@ -37,7 +39,7 @@
 			<option value="fashion">ファッション</option>
 			<option value="other">未分類</option>
 		</select>
-		<button name="btn" value="search">検索</button>
+		<button class = "btnbtn" name="btn" value="search">検索</button>
 		<input type="hidden" name="selectWay" value="category">
 	</form>
 		
@@ -50,7 +52,7 @@
 			<option value="3">5000-10000円</option>
 			<option value="4">10000円以上</option>
 		</select>
-		<button name="btn" value="search">検索</button>
+		<button class = "btnbtn" name="btn" value="search">検索</button>
 		<input type="hidden" name="selectWay" value="price">
 	</form>
 	
@@ -65,7 +67,7 @@
 					<td>${item.id}</td><td>${item.code}</td><td>${item.name}</td><td>${item.category}</td><td>${item.price}</td>
 					<td>
 						<form action="ManageServlet" method="get">
-							<button name="btn" value="cart">カートに入れる</button>
+							<button class = "btnchans" name="btn" value="cart">カートに入れる</button>
 							<input type="hidden" name="code" value="${item.code}">
 						</form>
 					</td>

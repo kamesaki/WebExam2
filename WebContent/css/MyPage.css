@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+body {
+	background-image: url("pngtree-simple-hand-drawn-plants-seaside-boat-image_8509.jpg");
+	background-size: cover;
+}
+
+h2 {
+	
+	padding-top: 100px;
+	padding-left: 150px;
+}
+
+.push {
+	text-align: center;
+	margin-top: 400px;
+}
+
+button {
+	padding: 20px;
+	font-size: 20px;
+	border-radius: 20px;
+}

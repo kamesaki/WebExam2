@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+h1 {
+	font-size: 100px;
+	width: 500px;
+	padding-top: 200px;
+	margin: 100px auto;
+	text-align: center;
+	font-family: "游ゴシック";
+}
+
+.top {
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+body {
+	background-image: url(login.jpg);
+	background-size: cover;
+}
+
+button {
+	margin-top: 50px;
+}

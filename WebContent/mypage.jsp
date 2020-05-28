@@ -14,6 +14,11 @@
 		<form action="ManageServlet" method="get">
 		<button name="btn" value="find">商品を探しに行こうぜ！</button>
 		</form>
+		
+		<form action="Omikuji" method="get">
+		<button name="btn" value="omikuji">運勢を占う！</button>
+		</form>
+		<p>${omikuji}</p>
 	</div>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/MyPage.css">
 </head>
 <body>
-	<h2>${item.userName}さんのマイページ</h2>
+	<h2>あなたのマイページ</h2>
 	
 	<div class = "push">
 		<form action="ManageServlet" method="get">

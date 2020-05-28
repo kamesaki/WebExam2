@@ -1,17 +1,20 @@
 package controller;
 
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import cookieService.CookieFac;
 import dbAccess.DBAccess;
 import dbAccess.SelectForLogin;
 import dto.ItemDto;
@@ -31,8 +34,34 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		Cookie[] cookies = request.getCookies();
+		String valueId = "";
+		String valuePass = "";
+		String message ="IDを入力するとクッキーが発行されます";
+		
+		if(cookies != null) {
+			for(Cookie c: cookies) {
+				
+				switch(c.getName()) {
+				
+				case ("id"):
+					valueId = URLDecoder.decode(c.getValue(), "UTF-8");
+					request.setAttribute("valueId", valueId);
+					message = "おかえりなさい<br>" + valueId + "さん";
+					break;
+					
+				case ("pass"):
+					valuePass = URLDecoder.decode(c.getValue(), "UTF-8");
+					request.setAttribute("valuePass",  valuePass);
+					break;
+			}
+		}
+	}
+		
+		request.setAttribute("title", message);
+		
 		ServletContext context = getServletContext();
-		RequestDispatcher dis = context.getRequestDispatcher("/manageTop.html");
+		RequestDispatcher dis = context.getRequestDispatcher("/manageTop.jsp");
 		dis.forward(request, response);
 	}
 
@@ -41,26 +70,37 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String button = request.getParameter("button");
 		
-		if(button.equals("login")) {
-			if(request.getParameter("pass").equals("1234567890")) {
-				
-				HttpSession newSession = request.getSession(true);
-				
-				ItemDto Item = new ItemDto();
-				Item.setUserName(request.getParameter("userName"));
+		String id = request.getParameter("id");
+		String pass = request.getParameter("pass");
+		
+		// クッキー生成処理
+		Cookie idCookie = CookieFac.getCookie(id, "id");
+		Cookie passCookie = CookieFac.getCookie(pass, "pass");
+		
+		// confirm.jspで表示されるメッセージ
+		String message = "入力が不正です<br>やり直してください";
+		
+		if(idCookie != null && passCookie != null) {
 			
-				newSession.setAttribute("item", Item);
-			}else {
-				request.setAttribute("message", "ログインに失敗しました");
-				doGet(request, response);
-				return;
-			}
+			response.addCookie(idCookie); // レスポンスにIDのcookieを追加
+			response.addCookie(passCookie); // レスポンスにパスワードのcookieを追加
+			// if文を処理した（IDとPWが正常に入力された場合）のみ、メッセージが変わる！
+			message = "クッキーを発行しました<br>TOPに戻ってみてね";
 		}
+		// requestは、ブラウザからサーバーに要求を送る事。
+		request.setAttribute("message", message);
+		
 		response.setContentType("text/html; charset=UTF-8");
 		ServletContext context = getServletContext();
 		RequestDispatcher dis = context.getRequestDispatcher("/mypage.jsp");
 		dis.forward(request, response);
 	}
+<<<<<<< HEAD
 }
+=======
+}
+
+
+
+>>>>>>> d4d3f64a668448715499b65af2217e9725da9bd8

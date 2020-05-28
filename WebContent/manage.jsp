@@ -9,12 +9,7 @@
 <link rel="stylesheet" href="css/manage.css">
 </head>
 <body>
-<<<<<<< HEAD
-
-<h2>商品検索しちゃおうぜ！</h2>
-=======
 <h2><span class="outline">商品検索しちゃおうぜ！</span></h2>
->>>>>>> refs/remotes/origin/master
 	<c:if test="${message != null }">
 		<p>${message}</p>
 	</c:if>

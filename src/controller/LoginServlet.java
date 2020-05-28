@@ -96,11 +96,5 @@ public class LoginServlet extends HttpServlet {
 		RequestDispatcher dis = context.getRequestDispatcher("/mypage.jsp");
 		dis.forward(request, response);
 	}
-<<<<<<< HEAD
+
 }
-=======
-}
-
-
-
->>>>>>> d4d3f64a668448715499b65af2217e9725da9bd8

@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="css/manage.css">
 </head>
 <body>
+
 <h2>商品検索しちゃおうぜ！</h2>
 	<c:if test="${message != null }">
 		<p>${message}</p>

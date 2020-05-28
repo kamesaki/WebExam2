@@ -1,11 +1,13 @@
 package controller;
 
 import java.io.IOException;
+import java.net.URLDecoder;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,10 +24,27 @@ public class Omikuji extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String[] Ans = {"亀吉", "青吉", "舞吉", "守吉", "美奈吉", "大吉", "中吉", "末吉", "吉", "凶", "大凶"};
+		String[] Ans = {"亀吉・。・", "青吉✌✌(๏д๏)✌✌", "舞吉(～￣▽￣)～", "守吉(๑`·ᴗ·´๑)", "美奈吉ヽ(。·ω·。)ﾉ", "大吉", "中吉", "末吉", "吉", "凶", "大凶"};
 		int r = new java.util.Random().nextInt(10);
 		
 		request.setAttribute("omikuji", Ans[r]);
+		
+		Cookie[] cookies = request.getCookies();
+		String id = "";
+		
+		if(cookies != null) {
+			for(Cookie c: cookies) {
+				
+				switch(c.getName()) {
+				
+				case ("id"):
+					id = URLDecoder.decode(c.getValue(), "UTF-8");
+					request.setAttribute("id", id);
+					break;
+					
+			}
+		}
+	}
 		
 		ServletContext context = getServletContext();
 		RequestDispatcher dis = context.getRequestDispatcher("/mypage.jsp");
@@ -37,7 +56,7 @@ public class Omikuji extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+		request.getAttribute("id");
 		
 		ServletContext context = getServletContext();
 		RequestDispatcher dis = context.getRequestDispatcher("/mypage.jsp");

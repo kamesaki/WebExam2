@@ -90,11 +90,13 @@ public class LoginServlet extends HttpServlet {
 		}
 		// requestは、ブラウザからサーバーに要求を送る事。
 		request.setAttribute("message", message);
+		request.setAttribute("id", id);
 		
 		response.setContentType("text/html; charset=UTF-8");
 		ServletContext context = getServletContext();
 		RequestDispatcher dis = context.getRequestDispatcher("/mypage.jsp");
 		dis.forward(request, response);
+
 	}
 
 }

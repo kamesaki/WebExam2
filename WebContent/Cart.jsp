@@ -24,8 +24,8 @@
 				</tr>
 			</table>
 			<p>これに決めるぞ</p>
-			<button class="push" name="btn" value="yes">もちろん</button>
-			<button class="push" name="btn" value="no">ちょっと待て</button>
+			<input type="button" value="もちろん" onClick="location.href='http://localhost:8080/webExam2/result.jsp'">
+			<input type="button" value="ちょっと待て" onClick="location.href='http://localhost:8080/webExam2/result2.jsp'">
 			<input type="hidden" name="code" value="${item.code}">
 		</form>
 	</div>

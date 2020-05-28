@@ -46,6 +46,7 @@ public class ManageServlet extends HttpServlet {
 				break;
 			default:
 				next = "manage.jsp";
+				
 				break;
 			}
 		}else {

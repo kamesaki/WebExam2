@@ -10,10 +10,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dbAccess.DBAccess;
 import dbAccess.SelectOne;
 import dbAccess.UpdateItem;
+import dto.ItemDto;
 
 /**
  * 商品情報編集時に呼び出されるサーブレット<br>
@@ -30,12 +32,6 @@ public class CartServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		dbAccess = new SelectOne();
-		try {
-			dbAccess.execute(request);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
 		
 		ServletContext context = getServletContext();
 		RequestDispatcher dis = context.getRequestDispatcher("/Cart.jsp");
@@ -47,20 +43,9 @@ public class CartServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		if(request.getParameter("btn").equals("yes")) {
-			dbAccess = new UpdateItem();
-			try {
-				dbAccess.execute(request);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}else {
-			request.setAttribute("message", "操作をキャンセルしました");
-		}
-		
 		ServletContext context = getServletContext();
 		RequestDispatcher dis = context.getRequestDispatcher("/result.jsp");
 		dis.forward(request, response);
 	}
-
+	
 }

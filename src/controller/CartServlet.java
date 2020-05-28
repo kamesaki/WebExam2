@@ -32,6 +32,12 @@ public class CartServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		dbAccess = new SelectOne();
+		try {
+			dbAccess.execute(request);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
 		ServletContext context = getServletContext();
 		RequestDispatcher dis = context.getRequestDispatcher("/Cart.jsp");
@@ -42,6 +48,13 @@ public class CartServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		dbAccess = new UpdateItem();
+		try {
+			dbAccess.execute(request);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
 		ServletContext context = getServletContext();
 		RequestDispatcher dis = context.getRequestDispatcher("/result.jsp");

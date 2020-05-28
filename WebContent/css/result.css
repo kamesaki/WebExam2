@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.ng {
+	color: red;
+}
+
+.ok {
+	color: black;
+}
+
+body {
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 300px;
+}

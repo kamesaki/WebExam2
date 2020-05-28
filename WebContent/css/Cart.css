@@ -3,7 +3,7 @@
 body {
 	background-image: url(sora2.jpg);
 	background-size: cover;
-	padding-top: 300px;
+	padding-top: 270px;
 }
 
 
@@ -16,14 +16,20 @@ body {
 }
 
 .cage table {
-	width: 300px;
+	width: 400px;
 	margin: 0 auto;
 	background-color: white;
 	margin-top: 70px;
 	margin-bottom: 30px;
 }
 
-.push {
+.btn {
 	padding: 10px;
-	text-size: 30px;
+	text-size: 50px;
+	border-radius: 10px;
+	opacity: 0.8;
+}
+
+.btn:hover {
+  opacity: 1;
 }

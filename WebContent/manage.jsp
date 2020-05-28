@@ -9,8 +9,12 @@
 <link rel="stylesheet" href="css/manage.css">
 </head>
 <body>
+<<<<<<< HEAD
 
 <h2>商品検索しちゃおうぜ！</h2>
+=======
+<h2><span class="outline">商品検索しちゃおうぜ！</span></h2>
+>>>>>>> refs/remotes/origin/master
 	<c:if test="${message != null }">
 		<p>${message}</p>
 	</c:if>
@@ -24,14 +28,14 @@
 	
 	
 	<form action="ManageServlet" method="get">
-		<p>商品名で検索</p>
+		<p><span class="outline">商品名で検索</span></p>
 		<input type="text" name="name">
 		<button class = "btnbtn" name="btn" value="search">検索</button>
 		<input type="hidden" name="selectWay" value="name">
 	</form>
 	
 	<form action="ManageServlet" method="get">	
-		<p>カテゴリから検索</p>
+		<p><span class="outline">カテゴリから検索</span></p>
 		<select name="category">
 			<option value="general">雑貨</option>
 			<option value="electric">家電</option>
@@ -45,7 +49,7 @@
 	</form>
 		
 	<form action="ManageServlet" method="get">	
-		<p>値段から検索</p>
+		<p><span class="outline">値段から検索</span></p>
 		<select name="price">
 			<option value="0">0-1500円</option>
 			<option value="1">1500-3000円</option>

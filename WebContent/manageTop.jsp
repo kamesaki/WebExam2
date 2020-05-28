@@ -12,7 +12,7 @@
 	<h1>青木商店</h1>
 	<div class = "top">
 		<form action="LoginServlet" method="post">
-			<p>USER NAME</p>
+			<p>USER ID</p>
 			<input type="text" name="id" value="${valueId}" size=35 placeholder="IDを入力しちゃおうぜ！">
 			<p>PASSWORD</p>
 			<input type="password" name="pass" value="${valuePass}" size=35 placeholder="パスワードを入力しちゃおうぜ！">

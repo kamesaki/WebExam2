@@ -24,9 +24,9 @@
 				</tr>
 			</table>
 			<p>これに決めるぞ</p>
-			<input type="button" value="もちろん" onClick="location.href='http://localhost:8080/webExam2/result.jsp'">
-			<input type="button" value="ちょっと待て" onClick="location.href='http://localhost:8080/webExam2/result2.jsp'">
-			<input type="hidden" name="code" value="${item.code}">
+			<input class="btn" type="button" value="もちろん" onClick="location.href='http://localhost:8080/webExam2/result.jsp'">
+			<input class="btn" type="button" value="ちょっと待て" onClick="location.href='http://localhost:8080/webExam2/result2.jsp'">
+			<input class="btn" type="hidden" name="code" value="${item.code}">
 		</form>
 	</div>
 </body>

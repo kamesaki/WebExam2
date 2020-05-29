@@ -9,6 +9,17 @@
 <link rel="stylesheet" href="css/manage.css">
 </head>
 <body>
+	<header>
+      <div class="container">
+        <div class="seitan">
+          <p>
+   	      <img class="logo" src="./css/ios__________.png">
+		     青木商店
+		  </p>
+        </div>
+        <input class="mp" type="button" value="マイページへ" onClick="location.href='http://localhost:8080/webExam2/mypage.jsp'">
+      </div>
+    </header>
 <h2><span class="outline">商品検索しちゃおうぜ！</span></h2>
 	
 	<form action="ManageServlet" method="get">

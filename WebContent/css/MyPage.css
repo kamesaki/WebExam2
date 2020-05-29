@@ -3,6 +3,7 @@
 body {
 	background-image: url("pngtree-simple-hand-drawn-plants-seaside-boat-image_8509.jpg");
 	background-size: cover;
+	margin: 0;
 }
 
 h2 {
@@ -34,4 +35,32 @@ button:hover {
 	font-family: serif;
 	font-weight: 900;
 	margin-top: 20px
+}
+
+.mp {
+	float: right;
+	margin-right: 20px;
+	margin-top: 40px;
+}
+
+header {
+  height: 80px;
+  background-color: rgba(34, 49, 52, 0.9);
+  width: 100%;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.seitan {
+	float: left;
+	color: white;
+}
+
+p {
+	margin-block-start: 0;
 }

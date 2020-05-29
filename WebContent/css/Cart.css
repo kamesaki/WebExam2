@@ -3,10 +3,12 @@
 body {
 	background-image: url(sora2.jpg);
 	background-size: cover;
-	padding-top: 270px;
+	margin: 0;
 }
 
-
+h1 {
+	padding-top: 200px;
+}
 
 .cage {
 	width: 1000px;
@@ -32,4 +34,32 @@ body {
 
 .btn:hover {
   opacity: 1;
+}
+
+.mp {
+	float: right;
+	margin-right: 20px;
+	margin-top: 40px;
+}
+
+header {
+  height: 80px;
+  background-color: rgba(34, 49, 52, 0.9);
+  width: 100%;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.seitan {
+	float: left;
+	color: white;
+}
+
+p {
+	margin-block-start: 0;
 }

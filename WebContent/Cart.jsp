@@ -8,6 +8,17 @@
 <title>買い物かご</title>
 <link rel="stylesheet" type="text/css" href="css/Cart.css">
 </head>
+<header>
+      <div class="container">
+        <div class="seitan">
+          <p>
+   	      <img class="logo" src="./css/ios__________.png">
+		     青木商店
+		  </p>
+        </div>
+        <input class="mp" type="button" value="マイページへ" onClick="location.href='http://localhost:8080/webExam2/mypage.jsp'">
+      </div>
+    </header>
 <body>
 	<div class = "cage">
 		<h1>これを買うんだな？</h1>

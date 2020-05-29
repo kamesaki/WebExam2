@@ -10,11 +10,6 @@
 </head>
 <body>
 <h2><span class="outline">商品検索しちゃおうぜ！</span></h2>
-	<c:if test="${message != null }">
-		<p>${message}</p>
-	</c:if>
-	
-	
 	
 	<form action="ManageServlet" method="get">
 		<button class = "btnchan" name="btn" value="search">全商品一覧表示</button>

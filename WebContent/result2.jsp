@@ -5,11 +5,13 @@
 <head>
 <meta charset="utf-8">
 <title>result</title>
-<link rel="stylesheet" type="text/css" href="css/result.css">
+<link rel="stylesheet" type="text/css" href="css/result().css">
 </head>
 <body>
-	<h1>操作をキャンセルしました</h1>
-	
+<div class="main" >
+	<h1>わかった！</h1>
+	<h2>一旦戻ろう!!</h2>
 	<input type="button" value="商品検索画面に戻る" onClick="location.href='http://localhost:8080/webExam2/ManageServlet?price=0&btn=search&selectWay=price'">
+</div>
 </body>
 </html>

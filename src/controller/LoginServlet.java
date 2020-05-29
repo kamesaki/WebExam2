@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
 		Cookie[] cookies = request.getCookies();
 		String valueId = "";
 		String valuePass = "";
-		String message ="IDを入力するとクッキーが発行されます";
+		String message ="";
 		
 		if(cookies != null) {
 			for(Cookie c: cookies) {
@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet {
 				case ("id"):
 					valueId = URLDecoder.decode(c.getValue(), "UTF-8");
 					request.setAttribute("valueId", valueId);
-					message = "おかえりなさい<br>" + valueId + "さん";
+					message = "また会ったな！<br>" + valueId + "！";
 					break;
 					
 				case ("pass"):
@@ -87,8 +87,7 @@ public class LoginServlet extends HttpServlet {
 			response.addCookie(passCookie); // レスポンスにパスワードのcookieを追加
 			// if文を処理した（IDとPWが正常に入力された場合）のみ、メッセージが変わる！
 			message = "クッキーを発行しました<br>TOPに戻ってみてね";
-		}
-		// requestは、ブラウザからサーバーに要求を送る事。
+			// requestは、ブラウザからサーバーに要求を送る事。
 		request.setAttribute("message", message);
 		request.setAttribute("id", id);
 		
@@ -96,6 +95,17 @@ public class LoginServlet extends HttpServlet {
 		ServletContext context = getServletContext();
 		RequestDispatcher dis = context.getRequestDispatcher("/mypage.jsp");
 		dis.forward(request, response);
+				
+		}else {
+			message = "入力が不正だぜ！";
+			request.setAttribute("title", message);
+			
+			response.setContentType("text/html; charset=UTF-8");
+			ServletContext context = getServletContext();
+			RequestDispatcher dis = context.getRequestDispatcher("/manageTop.jsp");
+			dis.forward(request, response);
+		}
+		
 
 	}
 

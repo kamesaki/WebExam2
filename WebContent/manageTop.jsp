@@ -8,9 +8,15 @@
 <title>login</title>
 <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
+<div class="video-wrap">
+	<video src="NewAokiStore.mp4" loop autoplay muted></video>
+</div>
 <body>
-	<h1>青木商店</h1>
+	
+	<h1></h1>
 	<div class = "top">
+		<h3>${title}</h3>
+		<h3>${message}</h3>
 		<form action="LoginServlet" method="post">
 			<p>USER ID</p>
 			<input type="text" name="id" value="${valueId}" size=35 placeholder="IDを入力しちゃおうぜ！">

@@ -1,0 +1,27 @@
+@charset "UTF-8";
+.ng {
+	color: red;
+}
+.ok {
+	color: black;
+}
+body {
+	background-image: url(r2.jpg);
+	background-size: cover;
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 300px;
+	letter-spacing : 2px;                /* 文字間 */
+  text-shadow    : 
+       1px  1px 1px #ffffff,
+      -1px  1px 1px #ffffff,
+       1px -1px 1px #ffffff,
+      -1px -1px 1px #ffffff,
+       1px  0px 1px #ffffff,
+       0px  1px 1px #ffffff,
+      -1px  0px 1px #ffffff,
+       0px -1px 1px #ffffff;        /* 文字の影 */
+}
+
+

@@ -4,7 +4,7 @@ h1 {
 	font-size: 100px;
 	width: 500px;
 	padding-top: 200px;
-	margin: 100px auto;
+	margin: 100px auto 400px auto;
 	text-align: center;
 	font-family: "游ゴシック";
 	color: blue;
@@ -14,11 +14,11 @@ h1 {
 	width: 1000px;
 	margin: 0 auto;
 	text-align: center;
+	color: white;
 }
 
 body {
-	background-image: url(login.jpg);
-	background-size: cover;
+	
 }
 
 button {
@@ -30,4 +30,17 @@ button {
 
 button:hover {
   opacity: 1;
+}
+
+video {
+position: fixed;
+ right: 0;
+ bottom: 0;
+ min-width: 100%;
+ min-height: 100%;
+ width: auto;
+ height: auto;
+ z-index: -100;
+ background-size: cover;
+	
 }

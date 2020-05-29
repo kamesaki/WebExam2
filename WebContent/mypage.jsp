@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title>result</title>
-<link rel="stylesheet" href="css/MyPage.css">
+<link rel="stylesheet" href="./css/MyPage.css">
 </head>
 <body>
 	<header>
@@ -16,7 +16,7 @@
 		     青木商店
 		  </p>
         </div>
-        <input class="mp" type="button" value="マイページへ" onClick="location.href='http://localhost:8080/webExam2/mypage.jsp'">
+        <input class="mp" type="button" value="Topページへ" onClick="location.href='http://localhost:8080/webExam2/LoginServlet'">
       </div>
     </header>
 	<h2>${id}さんのマイページ</h2>

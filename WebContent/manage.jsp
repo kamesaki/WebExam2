@@ -17,7 +17,7 @@
 		     青木商店
 		  </p>
         </div>
-        <input class="mp" type="button" value="マイページへ" onClick="location.href='http://localhost:8080/webExam2/mypage.jsp'">
+        <input class="mp" type="button" value="Topページへ" onClick="location.href='http://localhost:8080/webExam2/LoginServlet'">
       </div>
     </header>
 <h2><span class="outline">商品検索しちゃおうぜ！</span></h2>

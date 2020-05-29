@@ -24,8 +24,8 @@ public class Omikuji extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String[] Ans = {"亀吉・。・", "青吉✌✌(๏д๏)✌✌", "舞吉(～￣▽￣)～", "守吉(๑`·ᴗ·´๑)", "美奈吉ヽ(。·ω·。)ﾉ", "大吉", "中吉", "末吉", "吉", "凶", "大凶"};
-		int r = new java.util.Random().nextInt(10);
+		String[] Ans = {"(´· ·`)なぎお(´· ·`)", "井田吉(ﾟ⊿ﾟ)ｶﾏﾜﾅｲﾖ", "中吉", "守吉(๑`·ᴗ·´๑)", "美奈吉ヽ(。·ω·。)ﾉ", "大吉", "舞吉(´◠ω◠`)", "青吉✌✌(๏д๏)✌✌", "吉", "亀吉・。・", "冨吉(`·_·´ )"};
+		int r = new java.util.Random().nextInt(3);
 		
 		request.setAttribute("omikuji", Ans[r]);
 		

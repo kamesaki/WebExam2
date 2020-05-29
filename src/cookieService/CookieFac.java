@@ -28,7 +28,7 @@ public class CookieFac {
 			// ここに処理を記入してください
 			String encoded = URLEncoder.encode(param, "UTF-8");
 			cookie = new Cookie(idOrPass, encoded);
-			cookie.setMaxAge(60); //60秒間cookieが有効！
+			cookie.setMaxAge(120);
 		}
 		return cookie;
 	}
